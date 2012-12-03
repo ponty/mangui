@@ -56,9 +56,9 @@ def parse(xml):
 
     all_options.sort(key=fkey)
     return dict(
-            options=all_options,
-            purpose=refpurpose,
-            )
+        options=all_options,
+        purpose=refpurpose,
+    )
 
 
 def command_info(cmd):
@@ -71,5 +71,3 @@ def command_info(cmd):
 def test():
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(command_info('grep'))
-
-

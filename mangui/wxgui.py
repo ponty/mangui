@@ -8,7 +8,8 @@ from entrypoint2 import entrypoint
 
 class CheckListCtrl(wx.ListCtrl, CheckListCtrlMixin, ListCtrlAutoWidthMixin):
     def __init__(self, parent):
-        wx.ListCtrl.__init__(self, parent, -1, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
+        wx.ListCtrl.__init__(
+            self, parent, -1, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
         CheckListCtrlMixin.__init__(self)
         ListCtrlAutoWidthMixin.__init__(self)
 
@@ -36,7 +37,8 @@ class Repository(wx.Frame):
             flags = i[0]
             flags.sort(key=len, reverse=True)
             index = self.list.InsertStringItem(sys.maxint, flags[0])
-            self.list.SetStringItem(index, 1, flags[1] if len(flags) > 1 else '')
+            self.list.SetStringItem(
+                index, 1, flags[1] if len(flags) > 1 else '')
             self.list.SetStringItem(index, 2, i[1])
 
         vbox2 = wx.BoxSizer(wx.VERTICAL)
@@ -45,8 +47,10 @@ class Repository(wx.Frame):
         des = wx.Button(leftPanel, -1, 'Deselect All', size=(100, -1))
         apply = wx.Button(leftPanel, -1, 'Run', size=(100, -1))
         self.cb_close = wx.CheckBox(leftPanel, -1, 'Close', size=(100, -1))
-        self.cb_close.SetToolTip(wx.ToolTip("close GUI after running the command"))
-        self.cb_term = wx.CheckBox(leftPanel, -1, 'new terminal', size=(100, -1))
+        self.cb_close.SetToolTip(
+            wx.ToolTip("close GUI after running the command"))
+        self.cb_term = wx.CheckBox(
+            leftPanel, -1, 'new terminal', size=(100, -1))
         self.cb_term.SetToolTip(wx.ToolTip("run command in new terminal"))
         bt_exit = wx.Button(leftPanel, -1, 'Exit', size=(100, -1))
 
@@ -130,4 +134,3 @@ def main(command):
     app = wx.App()
     Repository(None, -1, 'mangui', mandoc)
     app.MainLoop()
-

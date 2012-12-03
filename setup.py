@@ -4,7 +4,7 @@ import sys
 
 
 def read_project_version(package):
-    py = os.path.join(package , '__init__.py')
+    py = os.path.join(package, '__init__.py')
     __version__ = None
     for line in open(py).read().splitlines():
         if '__version__' in line:
@@ -22,13 +22,14 @@ if sys.version_info >= (3,):
     extra['use_2to3'] = True
 
 classifiers = [
-    # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+    # Get more strings from
+    # http://www.python.org/pypi?%3Aaction=list_classifiers
     "Development Status :: 1 - Planning",
     "License :: OSI Approved :: BSD License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    ]
+]
 
 install_requires = open("requirements.txt").read().split('\n')
 
@@ -41,7 +42,7 @@ setup(
     classifiers=classifiers,
     keywords='GUI console',
     author='ponty',
-    #author_email='',
+    # author_email='',
     url=URL,
     license='BSD',
     packages=find_packages(exclude=['bootstrap', 'pavement', ]),
@@ -50,4 +51,4 @@ setup(
     zip_safe=False,
     install_requires=install_requires,
     **extra
-    )
+)

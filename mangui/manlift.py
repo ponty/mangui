@@ -30,5 +30,3 @@ def docxml(command):
 @entrypoint
 def test(command='grep'):
     print(docxml(command))
-
-

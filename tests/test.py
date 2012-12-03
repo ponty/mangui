@@ -24,6 +24,3 @@ def test_command_info():
     for x in commands:
         print x
         assert command_info(x)
-
-
-

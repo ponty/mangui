@@ -5,8 +5,8 @@ from mangui import wxgui
 @entrypoint
 def run():
     wxgui.main(
-#         'grep'
-#         'man'
-#         'python'
-         'ls'
-         )
+        #         'grep'
+        #         'man'
+        #         'python'
+        'ls'
+    )
